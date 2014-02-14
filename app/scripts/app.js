@@ -4,7 +4,9 @@ angular.module('seriesManagerApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'firebase',
+  'angularfire.firebase'
 ])
   .config(function ($routeProvider) {
     $routeProvider
