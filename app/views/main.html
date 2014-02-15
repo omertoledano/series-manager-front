@@ -1,12 +1,29 @@
 <div class="container" ng-controller="MainCtrl">
+    <a href="#add_show" class="btn btn-primary btn-success">
+        <i class="glyphicon glyphicon-plus">
+            New-show
+        </i></a>
     <table class="table table-stripped table-hover">
+        <thead>
+        <tr>
+            <th>Show Name</th>
+            <th>Season/Episode</th>
+            <th>Add Episode</th>
+            <th>Decrease Episode</th>
+            <th>Kat link</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
         <tbody>
             <tr ng-repeat="show in series">
                 <td>{{ show.name }}</td>
                 <td>S{{ show.season|addPrefixZero }}E{{ show.episode|addPrefixZero }}</td>
                 <td><a class="btn btn-success" ng-click="AddOne(show)">
-                    <i class="glyphicon glyphicon-plus"></i></a></td>
-                <td><a class="btn btn-danger" ng-click="ReduceOne(show)"><i class="glyphicon glyphicon-minus"></i></a></td>
+                    <i class="glyphicon glyphicon-arrow-up"></i></a></td>
+                <td><a class="btn btn-danger" ng-click="ReduceOne(show)"><i class="glyphicon glyphicon-arrow-down"></i></a></td>
+                <td><a href="http://kat.ph/usearch/{{show.name}}" target="_blank">
+                    <i class="glyphicon glyphicon-link"></i></a></td>
+                <td><a class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i></a></td>
             </tr>
         </tbody>
     </table>
